@@ -1,0 +1,17 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int main(){
+	int loan, years;
+	double interest = 4.2, payment;
+	cout << "Input loan amount (RM): ";
+	cin >> loan;
+	cout << "Input annual interet rate(%): ";
+	cin >> interest;
+	cout << "Input number of years: ";
+	cin >> years;
+	payment = ((loan*(interest / 100)*years) + loan) / (12 * years);
+	cout << "Monthly payment for this loan is (RM): " << payment << endl;
+	return 0;
+}
