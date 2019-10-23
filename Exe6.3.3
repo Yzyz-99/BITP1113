@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+const double gallons = 0.264179;
+double calc(int, int);
+
+int main()
+{
+	double litre, km, kmpg;
+	cout << "Please enter the number of litres of petrol consumed by your car : ";
+	cin >> litre;
+	cout << "Please enter the kilometres travelled by your car : ";
+	cin >> km;
+	kmpg=calc(litre, km);
+	cout << "The number of kilometres per gallon the car delivered : " << kmpg << " ." << endl;
+    return 0;
+}
+
+double calc(int litre, int km) {
+	double kmpg;
+	kmpg = (litre*gallons) / km;
+	return kmpg;
+}
