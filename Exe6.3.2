@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+void swap(float& x, float& y);
+
+int main()
+{
+	float x, y;
+	cout << "Please enter two values, x and y.\n";
+	cout << "x : ";
+	cin >> x;
+	cout << "y : ";
+	cin >> y;
+	cout << "The original value of x : " << x << endl;
+	cout << "The original value of y : " << y << endl;
+	cout << "Now I will show you a MAGIC, the value of x and y will be swap.\n";
+	swap(x, y);
+	cout << "The latest value of x : " << x << endl << "The latest value of y : " << y << " .\n";
+    return 0;
+}
+
+void swap(float& x, float& y) {
+	float temp;
+	temp = x;
+	x = y;
+	y = temp;
+	cout << "The latest value of x : " << x << endl<< "The latest value of y : " << y << " .\n";
+}
