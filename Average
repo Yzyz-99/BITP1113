@@ -6,6 +6,11 @@ void getScore(int num[]) {
 	for (int x = 0; x < 5; x++) {
 		cout << "Please enter score for " << x + 1 << " :  ";
 		cin >> num[x];
+		while (num[x] < 0 || num[x]>100) {
+			cout << "Please enter the correct score!!!\n";
+			cout << "Please reenter the score for " << x + 1 << " :  ";
+			cin >> num[x];
+		}
 	}
 }
 int findLowest(int num[]) {
