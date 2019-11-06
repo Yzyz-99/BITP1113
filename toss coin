@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include<iostream>
+#include<random>
+using namespace std;
+
+int main()
+{
+	char face;
+	int random,x;
+	do{
+		cout << "Let's play coin toss with me. ^_^\n\n";
+		cout << "H for head\n" << "T for tail\n";
+		cout << "Please enter the face you want to choose : \n";
+		cin >> face;
+		random = rand() % 2;
+		if (face != 'H' || face != 'T') {
+			cout << "Please enter the correct input.\n";
+			cout << "Caps Lock is sensitive";
+		}
+		if (random == 1 && face == 'H') {
+			cout << "You win!!!\n";
+		}
+		else if (random == 0 && face == 'T') {
+			cout << "You win!!!\n";
+		}
+		else {
+			cout << "You lose!!!\n";
+		}
+		cout << "Press any key if you want to continue to challenge\nEnter 0 to exit.\n";
+		cin >> x;
+	} while (x != 0);
+		return 0;
+}
