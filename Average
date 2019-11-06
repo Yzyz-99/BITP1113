@@ -1,0 +1,39 @@
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+
+void getScore(int num[]) {
+	for (int x = 0; x < 5; x++) {
+		cout << "Please enter score for " << x + 1 << " :  ";
+		cin >> num[x];
+	}
+}
+int findLowest(int num[]) {
+	int lowest = num[0];
+	for (int x = 0; x < 5; x++) {
+		if (num[x] < lowest) {
+			lowest = num[x];
+		}
+	}
+	return lowest;
+}
+double calcAverage(int num[]) {
+	int sum=0,lowest;
+	double average;
+	lowest = findLowest(num);
+	for (int x = 0; x < 5; x++) {
+		sum += num[x];
+	}
+	average = (sum - lowest) / 4;
+	return average;
+}
+
+int main()
+{
+	int num[5];
+	double average;
+	getScore(num);
+	average=calcAverage(num);
+	cout <<"The average of the four highest score is "<< average <<" ."<< endl;
+	return 0;
+}
