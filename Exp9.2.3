@@ -1,0 +1,30 @@
+#include <iostream>
+#define SIZE 5
+
+void discount(int disc, double newPrice[]);
+void display(const double discPrice[]);
+
+void main()
+{
+	double price[SIZE] = { 5.25,10.80,15.40,20.60,25.50 };
+	int discountValue;
+
+	std::cout << "Enter discount(%): ";
+	std::cin >> discountValue;
+	discount(discountValue, price);
+	display(price);
+}
+
+void discount(int disc, double newPrice[]) {
+	for (int x = 0; x<SIZE; x++) {
+		newPrice[x] = newPrice[x] - (newPrice[x] * disc / 100);
+	}
+}
+
+void display(const double discPrice[]) {
+	std::cout <<"New price values after discount are : \n";
+		for (int x = 0; x<SIZE; x++) {
+			std::cout << discPrice[x] << " ";
+		}
+		std::cout << std::endl;
+}
