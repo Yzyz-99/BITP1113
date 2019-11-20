@@ -1,0 +1,18 @@
+#include <iostream>
+#define SIZE 5
+
+double totalPrice(double newPrice[]);
+
+int main(){
+  double price[SIZE]={5.25,10.80,15.40,20.60,25.50};
+  std::cout<<"The total price is :RM"<<totalPrice(price)<<std::endl;
+  return 0;
+}
+
+double totalPrice(double newPrice[]){
+  double total=0;
+  for(int x=0;x<SIZE;x++){
+    total+=newPrice[x];
+    }
+  return total;
+}
