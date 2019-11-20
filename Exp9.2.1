@@ -1,0 +1,30 @@
+#include"stdafx.h"
+#include<iostream>
+const int SIZE=5;
+
+void square(int number[]);
+void display(const int number[]);
+
+int main() {
+	int array[SIZE] = { 2,4,6,8,10 };
+	square(array);
+	std::cout << "Elements of the array number after calling the square function:\n";
+	for (int x = 0; x < SIZE; x++) {
+		std::cout << "number[" << x << "] : " << array[x]<<std::endl;
+	}
+	std::cout << "\nElements of the array number printed by the display function:\n";
+	display(array);
+	return 0;
+}
+
+void square(int number[]) {
+	for (int x = 0; x < SIZE; x++) {
+		number[x] *= number[x];
+	}
+}
+
+void display(const int number[]) {
+	for (int x = 0; x < SIZE; x++) {
+		std::cout << "number[" << x << "] :" << number[x] << std::endl;
+	}
+}
