@@ -1,0 +1,54 @@
+#include <iostream>
+
+void funA(int Ary1[], char Ary2[]) {
+	for (int x = 0; x < 10; x++) {
+		if (Ary1[x] >= 75) {
+			Ary2[x] = 'A';
+		}
+		else if (Ary1[x] >= 60 && Ary1[x] < 75) {
+			Ary2[x] = 'B';
+		}
+		else if (Ary1[x] >= 50 && Ary1[x] < 60) {
+			Ary2[x] = 'C';
+		}
+		else if (Ary1[x] >= 40 && Ary1[x] < 50) {
+			Ary2[x] = 'D';
+		}
+		else if (Ary1[x] >= 0 && Ary1[x] < 40) {
+			Ary2[x] = 'F';
+		}
+	}
+}
+
+void funB(char grade, int &A, int &B, int &C, int &D, int &F) {
+	switch (grade) {
+	case 'A':
+		A++;
+		break;
+	case 'B':
+		B++;
+		break;
+	case 'C':
+		C++;
+		break;
+	case 'D':
+		D++;
+		break;
+	case 'F':
+		F++;
+		break;
+	}
+}
+
+int main() {
+	int Ary1[10] = { 85,72,61,45,50,53,55,86,66,33 };
+	char Ary2[10];
+	int x, A=0, B=0, C=0, D=0, F=0;
+	funA(Ary1, Ary2);
+	for (x = 0; x < 10; x++) {
+		std::cout << Ary1[x] << ", ";
+		funB(Ary2[x], A, B, C, D, F);
+	}
+	std::cout << "\n\nA: " << A << "\nB: " << B << "\nC: " << C << "\nD: " << D << "\nF: " << F << std::endl;
+	return 0;
+}
