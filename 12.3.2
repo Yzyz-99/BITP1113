@@ -6,7 +6,7 @@ int main() {
 	int arr[SIZE] = { 5,10,15,20,25,30,35,40 };
 	int* p = arr;
 	std::cout << "The numbers in set are: ";
-	for (int x = 0; x < 8; x++) {
+	for (int x = 0; x < SIZE; x++) {
 		std::cout << *(p + x)<<" ";
 	}
 	auto i = std::begin(arr), j = std::end(arr) - 1;
@@ -18,7 +18,7 @@ int main() {
 		--j;
 	}
 	std::cout << std::endl<<"The numbers in set backward are:";
-	for (int x = 0; x < 8; x++) {
+	for (int x = 0; x < SIZE; x++) {
 		std::cout <<*(p + x) << " ";
 	}
 }
