@@ -1,0 +1,32 @@
+#include<iostream>
+#include<iomanip>
+
+void getInput(double* pSales, double arr[]);
+void display(double arr[]);
+
+const int QUARTER = 4;
+
+int main() {
+	double sales,arr[QUARTER];
+	getInput(&sales, arr);
+	display(arr);
+	return 0;
+}
+
+void getInput(double* pSales, double arr[]) {
+	for (int x = 0; x < 4; ++x) {
+		std::cout << "Please enter sales for quarter " << x + 1 << " : RM ";
+		std::cin >> *pSales;
+		*(arr + x) = *pSales;
+	}
+}
+
+void display(double arr[]) {
+	double total = 0;
+	std::cout << std::endl << std::showpoint << std::setprecision(2) << std::fixed;;
+	for (int x = 0; x != QUARTER; ++x) {
+		std::cout << "Sales for quarter " << x + 1 << " : RM " << *(arr + x) << std::endl;
+		total += *(arr + x);
+	}
+	std::cout << std::endl << "The total sales : RM " << total;
+}
