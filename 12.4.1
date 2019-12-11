@@ -20,7 +20,7 @@ int main()
 			displayResult(result);
 		}
 		else
-			std::cout << "Please enter correct operator!";
+			std::cout << "Please enter correct operator!\n";
 		std::cout << "Enter your choice : ";
 		std::cin >> operation;
 	}
@@ -35,7 +35,7 @@ void getInput(int& num1, int& num2) {
 	std::cin >> *p2;
 }
 double calculate(const int& num1, const int& num2, const char& operation) {
-	double result=0;
+	double result = 0;
 	switch (operation) {
 	case '+':
 		result = num1 + num2;
@@ -56,4 +56,3 @@ double calculate(const int& num1, const int& num2, const char& operation) {
 void displayResult(const double& result) {
 	std::cout << result << std::endl;
 }
-
