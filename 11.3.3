@@ -1,0 +1,40 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<iomanip>
+
+const int SIZE = 20;
+struct information {
+	std::string id;
+	std::string name;
+	int marks[5] = {};
+	double gpa = 0;
+};
+
+int main() {
+	std::ifstream infile("detail.txt", std::ios::in);
+	information student[SIZE];
+	int x = 0;
+	if (!infile) {
+		std::cerr << "Error. The file couldn't be open!" << std::endl;
+		exit(-1);
+	}
+
+	while (!infile.eof()) {
+		infile >> student[x].id;
+		std::getline(infile, student[x].name, '\t');
+		for (int y = 0; y < 5; ++y)
+			infile >> student[x].marks[y];
+		infile >> student[x].gpa;
+		++x;
+	}
+	infile.close();
+	for (int x = 0; x < SIZE; ++x) {
+		std::cout << student[x].id<<" ";
+		std::cout << student[x].name<<" ";
+		for (int y = 0; y < 5; ++y)
+			std::cout << student[x].marks[y]<<" ";
+		std::cout << student[x].gpa << std::endl;
+	}
+	return 0;
+}
