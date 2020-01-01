@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+void calMulAndDiv(int num1, int num2, int& mul, int& div);
+
+int main()
+{
+	int NUM1, NUM2, MUL, DIV;
+	cout << "Please enter two integers\n";
+	cin >> NUM1 >> NUM2;
+	calMulAndDiv(NUM1, NUM2, MUL, DIV);
+	cout << NUM1 << " multiplied by " << NUM2 << " is " << MUL << endl;
+	cout << NUM1 << " divided by" << NUM2 << " is " << DIV << endl;
+}
+
+void calMulAndDiv(int num1, int num2, int& mul, int& div) {
+	mul = num1 * num2;
+	div = num1 / num2;
+}
