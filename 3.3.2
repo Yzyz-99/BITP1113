@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+void main() {
+	int seconds, hours, minutes, second1;
+	const int SCND_TO_HOUR = 3600, SCND_TO_MINUTE = 60;
+	cout << "Total time: ";
+	cin >> seconds;
+	hours = seconds / SCND_TO_HOUR;
+	minutes = (seconds - hours*SCND_TO_HOUR) / SCND_TO_MINUTE;
+	second1 = seconds - hours*SCND_TO_HOUR - minutes*SCND_TO_MINUTE;
+	cout << seconds << " seconds are equal to " << hours << " hours, " << minutes << " minutes and " << second1 << " seconds."<<endl;
+}
