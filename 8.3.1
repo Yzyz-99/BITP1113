@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int score[5], highest, different;
+	cout << "Enter 5 scores:\n";
+	for (int x = 0; x < 5; x++) {
+		cin >> score[x];
+	}
+	highest = score[0];
+	for (int x = 0; x < 5; x++) {
+		if (score[x] > highest) {
+			highest = score[x];
+		}
+	}
+	cout << "The highest score is " << highest << endl;
+	cout << "The scores and their differences from the highest are:\n";
+	for (int x = 0; x<5; x++) {
+		different = highest - score[x];
+		cout << score[x] << " off by " << different << endl;
+	}
+}
