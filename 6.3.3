@@ -1,0 +1,23 @@
+#include <iostream>
+const double LPerG = 0.264179;
+using namespace std;
+double calculation(double L, double KM, double &totalKMPG);
+
+int main()
+{
+	double litre, totaldistance=1, kilometre;
+	cout << "Please enter the number of litres of petrol consumed by the user's car:  ";
+	cin >> litre;
+	cout << "The number of kilometres travelled by the cars:  ";
+	cin >> kilometre;
+	calculation(litre, kilometre, totaldistance);
+	cout << "The number of kilometers per gallon the car delivered:  " << totaldistance<< endl;
+	return totaldistance;
+}
+
+double calculation(double L, double KM, double &totalKMPG) {
+	double LperG, gallon;
+	gallon = LPerG* L;
+	totalKMPG = KM/gallon;
+	return totalKMPG;
+}
