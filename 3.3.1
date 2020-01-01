@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	float price = 9.90, totalprice;
+	int quantity;
+	const int DISC = 10;
+
+	cout << "How many do you want to buy?\n";
+	cin >> quantity;
+	totalprice = (price * quantity) * (100 - DISC) / 100.00;
+	cout << "The price is " << totalprice;
+	return 0;
+}
