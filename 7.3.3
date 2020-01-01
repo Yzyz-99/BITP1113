@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void calculate(int x1, int x2, int y1, int y2,double& distance);
+void display(double D);
+
+int main()
+{
+	int X1=1, X2=-3, Y1=-2, Y2=5;
+	double d=0;
+	calculate(X1, X2, Y1, Y2,d);
+	display(d);
+}
+void calculate(int x1, int x2, int y1, int y2,double& distance) {
+	int DIFX = x2 - x1;
+	int DIFY = y2 - y1;
+	distance = sqrt(DIFX * DIFX + DIFY * DIFY);
+}
+
+void display(double D) {
+	cout << "The distance between points(1, -2) and (-3, 5) is " << D << " ." << endl;
+}
