@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	int firstNum, secondNum, sumeven = 0, diff;
+	double squareodd=0;
+	cout << "Please Enter 2 integers\n" << "1st: ";
+	cin >> firstNum;
+	cout << "2nd(should be less than 1st integer) : ";
+	cin >> secondNum;
+	diff = secondNum - firstNum;
+	if (diff < 0) {
+		cerr << "Error. Second integer should greater than first integer.";
+		exit;
+	}
+	cout << "\n\nThe odd number between them are ";
+		while (diff > 0) {
+			if ((diff % 10) % 2 != 0) {
+				cout << diff % 10 << ", ";
+				squareodd += pow(diff%10,2);
+			}
+			else {
+				sumeven += firstNum % 10;
+			}
+			diff /= 10;
+		}
+		cout << "The sum of all even number between them is " << sumeven<<" .\n";
+		cout << "The sum of the square of the odd numbers between them is " << squareodd << " .";
+	}
