@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+void readData(int studMarks[20][5]);
+void calTotMarks(int studMarks[20][5], int totMarks);
+void display(int studMarks[20][5], int totMarks);
+
+void main()
+{
+	int studMarks[20][5], totMarks=0;
+	readData(studMarks);
+	display(studMarks, totMarks);
+}
+
+void readData(int studMarks[20][5]) {
+	cout << "Please enter the marks for each student\n";
+	for (int x = 0; x < 20; x++) {
+		cout << "Please enter the marks for student " << x + 1 << " :\n";
+		for (int y = 0; y < 5; y++) {
+			cin>>studMarks[x][y];
+		}	
+	}
+}
+
+void calTotMarks(int studMarks[20][5], int totMarks) 
+{
+	for (int x = 0; x < 20; ++x) {
+		for (int y = 0; y < 5; ++y) {
+			totMarks =totMarks + studMarks[x][y];
+		}
+		cout << "Total mark for student " << x + 1 << " is ";
+		cout << totMarks<<endl;
+		totMarks = 0;
+	}
+}
+
+void display(int studMark[20][5], int totMarks) {
+	for (int x = 0; x < 20; x++) {
+		cout << "The mark for each subject of student " << x + 1 << " :\n";
+		for (int y = 0; y < 5; y++) {
+			cout << studMark[x][y]<<endl;
+		}
+	}
+	calTotMarks(studMark, totMarks);
+}
