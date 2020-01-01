@@ -1,0 +1,29 @@
+#include <iostream>
+#include<cstdlib>
+using namespace std;
+
+int main()
+{
+	double dis1, dis2, dis3, dis4, dis5, dis6, ratio1, ratio2, ratio3;
+	cout << "Enter values in cm.\n\n";
+	cout << "Enter eye distance and nose to chin distance for image 1: \n";
+	cin >> dis1 >> dis2;
+	cout << "Enter eye distance and nose to chin distance for image 2: \n";
+	cin >> dis3 >> dis4;
+	cout << "Enter eye distance and nose to chin distance for image 3: \n";
+	cin >> dis5 >> dis6;
+	ratio1 = dis1 / dis2;
+	ratio2 = dis3 / dis4;
+	ratio3 = dis5 / dis6;
+
+	if(abs(ratio1-ratio2)<abs(ratio1-ratio3)&& abs(ratio1 - ratio2) < abs(ratio2 - ratio3)){
+		cout<< "Best matches is image 1 and image 2.";
+	}
+	if (abs(ratio1 - ratio3) < abs(ratio1 - ratio2)&&abs(ratio1 - ratio3) < abs(ratio2 - ratio3)) {
+		cout << "Best matches is image 1 and image 3.";
+	}
+	else {
+		cout << "Best matches is image 2 and image 3.";
+	}
+	return 0;
+}
