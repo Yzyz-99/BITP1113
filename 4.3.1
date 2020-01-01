@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char vehicle;
+	long int hour;
+	double rate;
+	cout << "Please enter the type of vehicle.(C/L/B)";
+	cin >> vehicle;
+	cout << "Please enter the parking time duration (in hour)  ";
+	cin >> hour;
+	switch (vehicle)
+	{
+	case'C':
+		if (hour > 3) {
+			rate = (hour - 3) * 1.5 + 3;
+			cout << rate;
+		}
+		else {
+			rate = hour*1.00;
+			cout<< rate;
+		}
+		break;
+
+	case'L':
+		if (hour > 3) {
+			rate = (hour - 3) * 2.5 + 4.5;
+			cout << rate;
+		}
+		else {
+			rate = hour * 1.50;
+			cout << rate;
+		}
+		break;
+
+	case'B':
+		if (hour > 3) {
+			rate = (hour - 3) * 3.5 + 6;
+			cout << rate;
+		}
+		else {
+			rate = hour * 2.00;
+			cout << rate;
+		}
+		break;
+
+	default:
+		cout << "ERROR";
+	}
+}
