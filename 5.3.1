@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+
+int main(){
+	int x,y[20],even=0,odd=0,zero=0;
+	cout << "Please enter 20 integers, positive, negative, or zeros.\n";
+	for(x=0;x<20;x++){
+		cin >> y[x];
+	}
+	cout << "The numbers you entered are:\n";
+	for (x = 0; x < 20; x++) {
+		cout << y[x]<<" ";
+		if (y[x] % 2 == 0) {
+			even ++;
+		if (y[x] == 0) {
+			zero++;
+		}
+		}
+		else if (y[x] % 2!=0) {
+			odd++;
+		}
+	}
+	cout << "\nThere are " << even << " evens, which includes " << zero << " zeros.\n";
+	cout << "The number of odd numbers is " << odd << ".";
+	return 0;
