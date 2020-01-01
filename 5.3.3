@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+void main(){
+	int floor, room, roomocc, roomxocc ;
+	unsigned int totalroom = 0, totalroomocc = 0;
+	double percent=0;
+	cout << "Please enter the number of floor the hotel: ";
+	cin >> floor;
+	for (int x = 0; x < floor; x++) {
+		cout << "Please enter the number of rooms on the floor "<<x+1<<" :";
+		cin >> room;
+		cout << "Please enter number of them are occupied: ";
+		cin >> roomocc;
+		totalroom += room;
+		totalroomocc += roomocc;
+	}
+	roomxocc = totalroom - totalroomocc;
+	percent = totalroomocc*100/totalroom;
+	cout << "\n\nNumber of room have been occupied are " << totalroomocc << endl;
+	cout << "Number of room unoccupied are " << roomxocc << endl;
+	cout << "The percentage of rooms that are occupied is " << percent << "% ." << endl;
+}
