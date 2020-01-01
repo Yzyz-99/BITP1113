@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int x;
+	double cost, discount, price=20.00;
+	cout << "How many package do you want to buy? : ";
+	cin >> x;
+	
+	if (x > 9 && x < 20) {
+		discount = 0.8;
+	}
+	else if (x > 19 && x < 50) {
+		discount = 0.7;
+	}
+	else if (x > 49 && x < 100) {
+		discount = 0.6;
+	}
+	else if (x > 100) {
+		discount = 0.5;
+	}
+	else {
+		discount = 1;
+	}
+	cost = x * price * discount;
+	cout << "Total cost of the purchase:  " << cost << endl;
+	return 0;
+}
