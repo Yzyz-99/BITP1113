@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+void readData(double weight[] , double height[]);
+void calBMI(double weight[] , double height[] , double BMI[]);
+void display(double BMI[]);
+
+void main() {
+	double studWeight[20], studHeight[20],studBMI[20];
+	readData(studWeight,studHeight);
+	calBMI(studWeight, studHeight, studBMI);
+	display(studBMI);
+}
+
+void readData(double weight[], double height[]) {
+	for (int x = 0; x < 20; x++) {
+		cout << "Please enter the weight of student " << x+1 << " : " << endl;
+		cin >> weight[x];
+	}
+	for (int x = 0; x < 20; x++) {
+		cout << "Please enter the height of student " << x+1 << " : " << endl;
+		cin >> height[x];
+	}
+}
+
+void calBMI(double weight[], double height[], double BMI[]) {
+	for (int x = 0; x < 20; x++) {
+		BMI[x] = weight[x] / (height[x] * height[x]);
+	}
+}
+
+void display(double BMI[]) {
+	for (int x = 0; x < 20; x++) {
+		cout << "The BMI of student " << x << " is " << BMI[x]<<endl;
+	}
+}
